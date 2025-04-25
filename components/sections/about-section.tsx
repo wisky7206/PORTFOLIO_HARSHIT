@@ -67,14 +67,14 @@ export function AboutSection() {
   }
 
   return (
-    <section id="about" ref={ref} className="min-h-screen flex flex-col justify-center py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
+    <section id="about" ref={ref} className="min-h-screen flex flex-col justify-center py-12 md:py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold mb-6 relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 relative inline-block">
             ABOUT ME
             <motion.span
               className="absolute -bottom-2 left-0 h-0.5 bg-white"
@@ -83,37 +83,37 @@ export function AboutSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
             />
           </h2>
-          <p className="text-lg mb-6 text-gray-300">
+          <p className="text-base md:text-lg mb-4 md:mb-6 text-gray-300 text-justify">
             Motivated and detail-oriented B.Tech Computer Science Engineering student with proven experience in
             internships, research, and team projects. Strong ability to adapt, learn quickly, and contribute to
             goal-driven environments.
           </p>
-          <p className="text-lg mb-6 text-gray-300">
+          <p className="text-base md:text-lg mb-4 md:mb-6 text-gray-300 text-justify">
             Recognized in national hackathons and trusted with responsibilities in real-world industry settings. Looking
             to bring dedication and problem-solving skills to a dynamic organization.
           </p>
-          <p className="text-lg text-gray-300">
+          <p className="text-base md:text-lg text-gray-300 text-justify">
             My goal is to contribute to projects that make a meaningful impact and to continue growing as a developer
             and problem solver in this ever-evolving field.
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           <motion.div variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
-            <motion.h3 variants={itemVariants} className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Award className="w-5 h-5" />
+            <motion.h3 variants={itemVariants} className="text-xl md:text-2xl font-bold mb-3 md:mb-4 flex items-center gap-2">
+              <Award className="w-4 h-4 md:w-5 md:h-5" />
               Experience
             </motion.h3>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {experiences.map((item, index) => (
-                <motion.div key={index} variants={itemVariants} className="border border-white border-opacity-20 p-4">
-                  <div className="flex items-start gap-4">
+                <motion.div key={index} variants={itemVariants} className="border border-white border-opacity-20 p-3 md:p-4">
+                  <div className="flex items-start gap-3 md:gap-4">
                     <div className="mt-1">{item.icon}</div>
                     <div>
-                      <h4 className="text-xl font-semibold">{item.title}</h4>
-                      {item.company && <p className="text-gray-300">{item.company}</p>}
-                      <p className="text-gray-400">{item.period}</p>
-                      <p className="text-gray-300 mt-2">{item.description}</p>
+                      <h4 className="text-lg md:text-xl font-semibold">{item.title}</h4>
+                      {item.company && <p className="text-sm md:text-base text-gray-300">{item.company}</p>}
+                      <p className="text-xs md:text-sm text-gray-400">{item.period}</p>
+                      <p className="text-sm md:text-base text-gray-300 mt-1 md:mt-2">{item.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -127,22 +127,22 @@ export function AboutSection() {
             animate={isInView ? "visible" : "hidden"}
             transition={{ delay: 0.2 }}
           >
-            <motion.h3 variants={itemVariants} className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Star className="w-5 h-5" />
+            <motion.h3 variants={itemVariants} className="text-xl md:text-2xl font-bold mb-3 md:mb-4 flex items-center gap-2">
+              <Star className="w-4 h-4 md:w-5 md:h-5" />
               Education
             </motion.h3>
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {education.map((item, index) => (
-                <motion.div key={index} variants={itemVariants} className="border border-white border-opacity-20 p-4">
-                  <div className="flex items-start gap-4">
+                <motion.div key={index} variants={itemVariants} className="border border-white border-opacity-20 p-3 md:p-4">
+                  <div className="flex items-start gap-3 md:gap-4">
                     <div className="mt-1">{item.icon}</div>
                     <div>
-                      <h4 className="text-xl font-semibold">{item.title}</h4>
-                      {item.institution && <p className="text-gray-300">{item.institution}</p>}
+                      <h4 className="text-lg md:text-xl font-semibold">{item.title}</h4>
+                      {item.institution && <p className="text-sm md:text-base text-gray-300">{item.institution}</p>}
                       <div className="flex flex-wrap gap-2 items-center">
-                        <p className="text-gray-400">{item.period}</p>
+                        <p className="text-xs md:text-sm text-gray-400">{item.period}</p>
                         <span className="text-gray-500">•</span>
-                        <p className="text-white font-medium">{item.grade}</p>
+                        <p className="text-sm md:text-base text-white font-medium">{item.grade}</p>
                       </div>
                     </div>
                   </div>

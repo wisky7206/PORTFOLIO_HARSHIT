@@ -68,15 +68,15 @@ export function ProjectsSection() {
   }
 
   return (
-    <section id="projects" ref={ref} className="min-h-screen flex flex-col justify-center py-20">
-      <div className="px-6">
+    <section id="projects" ref={ref} className="min-h-screen flex flex-col justify-center py-12 md:py-20">
+      <div className="px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="mb-8 md:mb-12"
         >
-          <h2 className="text-4xl font-bold mb-6 relative inline-block">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 relative inline-block">
             PROJECTS
             <motion.span
               className="absolute -bottom-2 left-0 h-0.5 bg-white"
@@ -85,7 +85,7 @@ export function ProjectsSection() {
               transition={{ duration: 0.8, delay: 0.3 }}
             />
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl">
+          <p className="text-base md:text-lg text-gray-300 max-w-2xl">
             A selection of my recent work, showcasing my skills in various technologies and problem domains. Each
             project represents a unique challenge and solution.
           </p>
@@ -95,13 +95,13 @@ export function ProjectsSection() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="space-y-16"
+          className="space-y-8 md:space-y-16"
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-8 border border-white border-opacity-10 p-8"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 border border-white border-opacity-10 p-4 md:p-8"
             >
               <div className="relative aspect-[16/9] overflow-hidden group flex items-center justify-center my-auto">
                 <Image
@@ -119,10 +119,10 @@ export function ProjectsSection() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform"
+                        className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform"
                         aria-label="View GitHub repository"
                       >
-                        <Github className="w-5 h-5" />
+                        <Github className="w-4 h-4 md:w-5 md:h-5" />
                       </a>
                     )}
                     {project.demo && (
@@ -130,10 +130,10 @@ export function ProjectsSection() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform"
+                        className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform"
                         aria-label="View live demo"
                       >
-                        <ArrowUpRight className="w-5 h-5" />
+                        <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
                       </a>
                     )}
                   </div>
@@ -141,22 +141,22 @@ export function ProjectsSection() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{project.title}</h3>
+                <p className="text-sm md:text-base text-gray-300 mb-3 md:mb-4 text-justify">{project.description}</p>
 
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-2">Problem</h4>
-                  <p className="text-gray-400">{project.problem}</p>
+                <div className="mb-4 md:mb-6">
+                  <h4 className="text-base md:text-lg font-semibold mb-1 md:mb-2">Problem</h4>
+                  <p className="text-sm md:text-base text-gray-400 text-justify">{project.problem}</p>
                 </div>
 
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-2">Solution</h4>
-                  <p className="text-gray-400">{project.solution}</p>
+                <div className="mb-4 md:mb-6">
+                  <h4 className="text-base md:text-lg font-semibold mb-1 md:mb-2">Solution</h4>
+                  <p className="text-sm md:text-base text-gray-400 text-justify">{project.solution}</p>
                 </div>
 
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold mb-2">User Experience</h4>
-                  <p className="text-gray-400">{project.experience}</p>
+                <div className="mb-4 md:mb-6">
+                  <h4 className="text-base md:text-lg font-semibold mb-1 md:mb-2">User Experience</h4>
+                  <p className="text-sm md:text-base text-gray-400 text-justify">{project.experience}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-2 mt-4">
@@ -167,16 +167,16 @@ export function ProjectsSection() {
                   ))}
                 </div>
 
-                <div className="mt-6 flex gap-4">
+                <div className="mt-4 md:mt-6 flex flex-wrap gap-3 md:gap-4">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm border border-white px-4 py-2 hover:bg-white hover:text-black transition-all duration-300"
+                      className="flex items-center gap-2 text-xs md:text-sm border border-white px-3 md:px-4 py-1.5 md:py-2 hover:bg-white hover:text-black transition-all duration-300"
                       aria-label="View code on GitHub"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-3 h-3 md:w-4 md:h-4" />
                       View Code
                     </a>
                   )}
@@ -185,10 +185,10 @@ export function ProjectsSection() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm border border-white px-4 py-2 hover:bg-white hover:text-black transition-all duration-300"
+                      className="flex items-center gap-2 text-xs md:text-sm border border-white px-3 md:px-4 py-1.5 md:py-2 hover:bg-white hover:text-black transition-all duration-300"
                       aria-label="View live demo"
                     >
-                      <LinkIcon className="w-4 h-4" />
+                      <LinkIcon className="w-3 h-3 md:w-4 md:h-4" />
                       Live Demo
                     </a>
                   )}
